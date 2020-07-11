@@ -55,9 +55,15 @@ class Registration extends Component {
             }
         try{
             const response = await axios.post(apiCall, account);
-            console.log(response)
+            setTimeout(() => {
+                localStorage.setItem('token', response.data.token);
+                this.setState({loading:false});
+                message.success(`Welcome to your dashboard ${last_name}`);
+                this.props.history.replace('/student')
+            }, 1500)
         }catch (e) {
             if(e){
+                this.setState({loading:false})
                 const errors = this.state.errors;
                 errors['email'] = e.response.data['email']
                 this.setState({errors})
@@ -75,9 +81,15 @@ class Registration extends Component {
             };
         try{
             const response = await axios.post(apiCall, account);
-            console.log(response)
+            setTimeout(() => {
+                localStorage.setItem('token', response.data.token);
+                this.setState({loading:false});
+                message.success(`Welcome to your dashboard ${last_name}`);
+                this.props.history.replace('/teacher')
+            }, 1500)
         }catch (e) {
             if(e){
+                this.setState({loading:false});
                const errors = this.state.errors;
                 errors['email'] = e.response.data['email'];
                 this.setState({errors})
