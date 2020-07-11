@@ -40,6 +40,7 @@ class Registration extends Component {
 
     handleSubmit = async(e) => {
         e.preventDefault();
+        const {refreshPage} = this.context;
         this.setState({loading:true});
         const {account:{email, first_name, last_name, password, password2}, value} = this.state;
         const apiCall = '/api/user/';
@@ -59,6 +60,7 @@ class Registration extends Component {
                 localStorage.setItem('token', response.data.token);
                 this.setState({loading:false});
                 message.success(`Welcome to your dashboard ${last_name}`);
+                refreshPage()
                 this.props.history.replace('/student')
             }, 1500)
         }catch (e) {
@@ -85,6 +87,7 @@ class Registration extends Component {
                 localStorage.setItem('token', response.data.token);
                 this.setState({loading:false});
                 message.success(`Welcome to your dashboard ${last_name}`);
+                 refreshPage();
                 this.props.history.replace('/teacher')
             }, 1500)
         }catch (e) {
