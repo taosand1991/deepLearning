@@ -1,0 +1,816 @@
+@import "~bootstrap-css-only";
+
+
+body {
+    background: rgba(0, 0, 0, 1);
+    height: 100vh;
+}
+
+.navItem {
+    overflow: hidden;
+    position: relative;
+
+
+}
+
+.navItem .brander {
+    float: left !important;
+    margin-left: 5px;
+    background-color: transparent;
+    margin-top:10px;
+    margin-bottom: 5px;
+    width:50px;
+    height: 50px;
+}
+
+.navItem .brander:hover{
+    background-color: transparent;
+}
+
+.navItem a {
+    padding: 14px 16px !important;
+    float: right !important;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: all .5s linear;
+}
+
+.navItem a:hover {
+    background-color: darkorange;
+    color: white;
+    transition: all .5s linear;
+}
+
+
+#sidenav {
+    padding: 0;
+    height: 100%;
+    width: 0;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1;
+    position: fixed;
+    transition: all .3s linear;
+}
+
+#sidenav .nav-link {
+    padding: 20px 20px 20px 8px;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: font-size .2s linear;
+
+}
+
+#sidenav .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#sidenav .nav-link:hover {
+    color: yellow;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.navItem #key {
+    display: none;
+}
+
+.active {
+    background-color: green;
+}
+
+@media only screen and (max-width: 480px) {
+    .hamburger {
+        cursor: pointer;
+        margin: 10px;
+    }
+
+    .nav-link {
+        display: none;
+    }
+
+    .navItem .brander {
+        display: inline;
+        float: left;
+        font-family: ChopinScript, 'serif';
+        font-size: 18px;
+    }
+
+    .navItem .login_nav {
+        display: inline;
+        float: right;
+        margin-right: 60px;
+        font-size: 20px;
+    }
+
+    .navItem #key {
+        display: block;
+        position: absolute;
+        color: white;
+        top: 22px;
+        right: 130px;
+    }
+
+    .navItem a:hover {
+        background-color: transparent;
+    }
+
+    .active {
+        background-color: transparent;
+    }
+
+    .navItem .login_nav {
+        margin-right: 50px
+    }
+
+    .hamburger .icon {
+        width: 30px;
+        background-color: white;
+        position: relative;
+        height: 5px;
+        margin: 5px 0;
+        display: block;
+        top: 5px;
+        left: 90% !important;
+        border-radius: 10px;
+        transition: all .3s linear;
+    }
+}
+
+
+.hamburger.open .icon:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+    transition: ease-in-out .2s;
+}
+
+.hamburger.open .icon:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open .icon:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+    transition: ease-in-out .2s;
+}
+
+.row .border-line {
+    border-left: 2px solid white;
+    margin: 0;
+    padding: 0;
+    height: 100% !important;
+}
+
+@media only screen and (min-width: 900px) {
+    .login_card, .reg_card {
+        min-height: 100%;
+        overflow: hidden;
+        background: linear-gradient(90deg, green, white);
+    }
+
+    .login_card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .login_card form {
+        text-align: center;
+
+    }
+
+    .login, .register {
+        color: white;
+        transition: border-left-width .5s linear;
+        font-family: Roboto, sans-serif;
+        font-size: 20px;
+    }
+
+    .login::before, .register::before {
+        content: '\00bb';
+        position: absolute;
+        transform: rotate(180deg);
+        left: 190px;
+        font-size: 25px;
+        animation: pattern 1s linear;
+        animation-iteration-count: infinite;
+    }
+
+    .login::after, .register::after {
+        content: '\00bb';
+        position: absolute;
+        transform: rotate(360deg);
+        right: 190px;
+        top: -5px;
+        font-size: 25px;
+        animation: scatter 1s linear;
+        animation-iteration-count: infinite;
+    }
+
+    .login:hover, .register:hover {
+        border-bottom: 1px solid green;
+        transition: .5s linear;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .login_card, .reg_card {
+        margin: 10px;
+        background: linear-gradient(90deg, green, white);
+    }
+
+    .login, .register {
+        color: white;
+        transition: border-left-width .5s linear;
+        font-family: Roboto, sans-serif;
+        font-size: 20px;
+    }
+
+    .login::before, .register::before {
+        content: '\00bb';
+        position: absolute;
+        transform: rotate(180deg);
+        left: 50px;
+        font-size: 25px;
+        animation: pattern 1s linear;
+        animation-iteration-count: infinite;
+    }
+
+    .login::after, .register::after {
+        content: '\00bb';
+        position: absolute;
+        transform: rotate(360deg);
+        right: 50px;
+        top: -5px;
+        font-size: 25px;
+        animation: scatter 1s linear;
+        animation-iteration-count: infinite;
+    }
+
+    .login:hover, .register:hover {
+        border-bottom: 1px solid green;
+        transition: .5s linear;
+    }
+
+}
+
+@keyframes pattern {
+    from {
+        margin-left: 20px;
+        transition: .2s linear;
+    }
+    to {
+        margin-left: -20px;
+        transition: .2s linear;
+    }
+}
+
+@keyframes scatter {
+    from {
+        margin-right: 20px;
+        transition: .2s linear;
+    }
+    to {
+        margin-right: -20px;
+        transition: .2s linear;
+    }
+}
+
+.background {
+    padding-top: 50px;
+    background-color: gold;
+}
+
+.loading {
+    background: rgba(0, 0, 0, 0.7) url("/static/Spin-1s-200px.gif") no-repeat 50% 50%;
+    background-size: 20%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 999;
+
+}
+@media only screen and (min-width: 900px) {
+
+    .sidenavbar {
+        height: 100%;
+        width: 350px;
+        margin-left: 5px;
+        background-color: white;
+        position: fixed;
+
+    }
+
+    .sidenavbar a {
+        font-size: 25px;
+        color: green;
+        transition: all .5s linear;
+        display: block;
+        padding: 10px 10px 10px 15px;
+    }
+
+    .sidenavbar a:hover {
+        background-color: black;
+        color: white;
+        transition: .5s linear;
+    }
+
+    .sidenavbar .fas {
+        margin: 10px;
+    }
+
+    .teacher {
+        position: relative;
+
+    }
+
+    .teacher .main-page {
+        position: relative;
+        background-color: white;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        width: 65%;
+        margin-left: 400px;
+    }
+
+    .sidenavbar_mobile{
+        display: none;
+    }
+    .edit-icon{
+        position: absolute;
+        top:20%;
+        right: 30px;
+        font-size: 25px;
+        padding: 10px;
+        background-color: lightgrey;
+        color: white;
+        border-radius: 5px;
+        z-index: 1;
+        cursor: pointer;
+    }
+    .icon-edit{
+     cursor: pointer;
+        z-index: 1;
+    }
+
+}
+
+.activebar{
+        background-color: grey;
+        color: white !important;
+    z-index: -1;
+    }
+@media only screen and (max-width: 600px) {
+    .sidenavbar{
+        display: none;
+    }
+    .sidenavbar_mobile {
+        height: 100%;
+        margin-top: 50px;
+        width: 0;
+        margin-left: 5px;
+        background-color: rgba(0, 0, 0, 0.7);
+        position: fixed;
+        overflow: hidden;
+        transition: all .3s linear;
+
+
+    }
+
+    .sidenavbar_mobile a {
+        font-size: 20px;
+        color: white;
+        transition: all .5s linear;
+        display: block;
+        padding: 10px 10px 10px 15px;
+    }
+
+    .sidenavbar_mobile a:hover {
+        background-color: black;
+        color: white;
+        transition: .5s linear;
+    }
+
+    .sidenavbar_mobile .fas {
+        margin: 10px;
+    }
+
+
+
+    .hamburger_icon {
+        cursor: pointer;
+        padding: 10px 2px;
+        position: relative;
+        width: 60px;
+        margin-left: 20px;
+        border-radius: 7px;
+        background-color: green;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .hamburger_icon .icon {
+        width: 30px;
+        background-color: white;
+        position: relative;
+        height: 5px;
+        top: 60%;
+        margin: 2px 10px;
+        border-radius: 5px;
+        display: block;
+        transition: all .3s linear;
+    }
+
+    .hamburger_icon.open .icon:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+        transition: ease-in-out .2s;
+    }
+
+    .hamburger_icon.open .icon:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger_icon.open .icon:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+        transition: ease-in-out .2s;
+    }
+
+    .teacher .main-page {
+        position: relative;
+        background-color: white;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        overflow: auto;
+    }
+    .edit-icon{
+        position: absolute;
+        top:20%;
+        right: 30px;
+        font-size: 25px;
+        padding: 10px;
+        background-color: grey;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .icon-edit{
+        cursor: pointer;
+    }
+}
+
+.topic{
+    font-family: "Britannic Bold", serif;
+    border-bottom: 1px solid black;
+}
+
+.question-form::before, .question-form::after{
+    content: '';
+    width: 40%;
+    vertical-align: middle;
+    position: relative;
+    display: inline-block;
+    background-color: black;
+    height: 1px;
+}
+
+.question-form::before{
+    right: 5px;
+}
+
+.question-form::after{
+    left: 5px;
+}
+
+.question-form{
+    font-family: "Cinzel Decorative Black", serif;
+    font-size: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+    .question-form::before, .question-form::after{
+    content: '';
+    width: 25%;
+    vertical-align: middle;
+    position: relative;
+    display: inline-block;
+    background-color: black;
+    height: 1px;
+}
+
+.question-form::before{
+    right: 5px;
+}
+
+.question-form::after{
+    left: 5px;
+}
+
+.question-form{
+    font-family: "Cinzel Decorative Black", serif;
+    font-size: 16px;
+}
+}
+
+.loading_2{
+    background: rgba(0, 0, 0, 0.7) url("/static/Spinner-1s-200px.svg") no-repeat 50% 50%;
+    background-size: 40%;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 999;
+}
+@media only screen and (min-width: 900px) {
+    .link-thing{
+        height: 100%;
+        padding: 20px 10px 10px 10px;
+        width: 25%;
+        /*display: inline-block;*/
+        background-color: white;
+        position: fixed;
+        border-radius: 10px;
+        margin: 0;
+    }
+    .link-thing a {
+        color:green;
+        transition: all .3s linear;
+        display: block;
+        font-size: 25px;
+        margin-top: 20px;
+        text-align: center;
+        border-top:2px solid black;
+        border-bottom: 2px solid black;
+    }
+    .link-thing a:hover{
+        background-color: black !important;
+        color:white;
+        z-index: 1;
+        transition: .3s linear;
+         margin-left: 5px;
+    }
+
+}
+
+.details-page{
+    position: relative;
+    margin:0 auto;
+}
+
+@media only screen and (max-width: 600px){
+    .link-thing{
+    padding: 20px 10px 10px 10px;
+    width: 100%;
+    background-color: white;
+   height: 100%;
+}
+    .link-thing a{
+    color:green;
+    transition: all .3s linear;
+    display: block;
+    font-size: 25px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.link-thing a:hover{
+    background-color: black !important;
+    color:white;
+    z-index: 1;
+    transition: .3s linear;
+     margin-left: 5px;
+
+}
+.details-page{
+    position: relative;
+    z-index: 1;
+    margin-top: 50px;
+}
+}
+
+.student_active{
+    background-color: black;
+    color:white;
+}
+
+.page-number{
+    border-radius: 5px;
+    display: block;
+    border: 2px dashed black;
+    height: 100px;
+}
+
+.page-number ul li{
+    float: left;
+    margin: 10px;
+    list-style: none;
+    padding:10px;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .2s linear;
+
+}
+
+.page-number ul li:hover{
+    opacity: 0.5;
+    transition: .2s linear;
+}
+
+.page-number, ul li.blank{
+    background-color: white !important;
+    color:green;
+     padding:10px;
+    border: 1px solid green !important;
+}
+
+.italic{
+    font-style: italic;
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+}
+
+.counter{
+    padding:5px;
+    background-color: black;
+    color: white;
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.time-color{
+    background-color: red;
+    animation: patterns 1s linear ;
+    animation-iteration-count: infinite ;
+}
+
+@keyframes patterns {
+    from {
+        background-color: black ;
+        transition: all 1s linear ;
+    }
+    to {
+        background-color: red ;
+        transition: all 1s linear ;
+    }
+}
+
+.assignment{
+    cursor: pointer;
+}
+
+.page-1{
+    background-color: darkgoldenrod;
+
+}
+
+.page-2{
+background-color: darkgoldenrod;
+    opacity: 0.9;
+    margin-top: 10px;
+}
+
+.page-2 img{
+    width:300px;
+    height: 300px;
+    border: 2px solid green;
+    margin: 10px;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.7);
+}
+
+.link-page{
+    width:80%;
+    margin: 0 auto;
+}
+
+.teacher-page{
+background-color: darkgoldenrod;
+}
+
+.teacher-page img{
+    width: 400px;
+    height: 300px;
+    margin-right: 5px;
+    margin-top: 20px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+.teacher-page p{
+    margin-top: 5px;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+
+}
+
+.academic{
+        color: white;
+
+    }
+
+  .academic img{
+      width:650px;
+      height: 400px;
+      margin-top: 50px;
+  }
+  .academic p{
+      margin-top: 50px;
+  }
+@media only screen and (max-width: 480px){
+    .page-2 img{
+    width:330px;
+    height: 300px;
+    border: 2px solid green;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.7);
+}
+    .teacher-page img{
+    width: 300px;
+    height: 300px;
+    margin-right: 5px;
+    margin-top: 20px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+    .academic{
+        color: white;
+    }
+
+  .academic img{
+      width:320px;
+      height: 300px;
+  }
+
+}
+
+.contact p{
+    width: 90%;
+    margin: 0 auto;
+    color: white;
+}
+
+.contact form{
+    color: white;
+}
+
+.mybtn{
+    display: inline-block !important;
+}
+
+.fade-enter{
+    opacity: 0;
+}
+
+.fade-enter.fade-enter-active{
+    opacity: 1;
+    transition: opacity .3s ease-in;
+}
+
+.fade-exit{
+    opacity: 1;
+
+}
+
+.fade-exit.fade-exit-active{
+    opacity: 0;
+    transition: opacity .3s linear;
+}
+
+.loading_3{
+    background: rgba(0, 0, 0, 0.7) url("/static/cubic.svg") no-repeat 50% 50%;
+    background-size: 30%;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 999;
+}
+
+footer.footer{
+    width: 100%;
+    padding-top: 20px;
+    bottom: 0;
+    height: 10vh;
+}
