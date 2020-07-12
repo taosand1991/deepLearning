@@ -83,7 +83,7 @@ class Test extends Component {
     handleResult =()=>{
         let correctScore = 0;
         this.state.questions.forEach((q, index) => {
-            if(this.state.answer[index] === q.answer_text){
+            if(JSON.parse(this.state.answer[index]) === q.answer_text){
                 correctScore++
             }
             this.setState({correctScore})
