@@ -13,13 +13,12 @@ class Result extends Component {
     }
 
     componentDidMount() {
-        this._isMounted  = true;
         window.addEventListener('beforeunload', this.goBack);
 
     }
 
      componentWillUnmount() {
-         this._isMounted  = false;
+
     }
     goBack =()=>{
         return this.props.history.replace('/student/question')
@@ -80,7 +79,7 @@ class Result extends Component {
                 return <div>
                      <h5>{totalScore}%</h5>
                      <div className="text-center">
-                                <Progress percent={totalScore} success={50}
+                                <Progress percent={totalScore} success={{percent: 50}}
                                           strokeColor={totalScore < 50 ? 'red' : 'blue'}
                                           type='circle'/>
                             </div>

@@ -53,7 +53,6 @@ class Test extends Component {
 
 
     handleAnswer = async (id, e) => {
-        console.log(e.target.value);
         const answerId = this.state.answer;
         answerId[id] = e.target.value;
         this.setState({
@@ -81,12 +80,13 @@ class Test extends Component {
     };
 
     handleResult =()=>{
-        let correctScore = 0;
+        let countedScore = 0;
+        const answer = this.state.answer;
         this.state.questions.forEach((q, index) => {
-            if(JSON.parse(this.state.answer[index]) === q.answer_text){
-                correctScore++
+           if(answer[index] === q.answer_text){
+                countedScore++
             }
-            this.setState({correctScore})
+            this.setState({correctScore:countedScore})
         });
         this.setState({loading:true});
         setTimeout(() => {
