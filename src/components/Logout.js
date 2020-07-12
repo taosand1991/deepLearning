@@ -13,7 +13,7 @@ function Logout(props) {
     return (
         <div className='text-center'>
             <span><SyncOutlined style={options} spin/></span>
-            <p className='text-white'>LOGGING YOU OUT....</p>
+            <p className='logout'>LOGGING YOU OUT....</p>
         </div>
     );
 }

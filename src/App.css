@@ -814,3 +814,10 @@ footer.footer{
     bottom: 0;
     height: 10vh;
 }
+
+.logout{
+    color:white;
+    font-family: Roboto, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+}
