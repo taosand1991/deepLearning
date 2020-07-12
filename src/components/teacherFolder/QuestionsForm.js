@@ -148,7 +148,6 @@ class QuestionsForm extends Component {
                 console.log(e.response.data)
             }
         }
-        console.log(user.user_id)
     };
 
     render() {

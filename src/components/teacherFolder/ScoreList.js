@@ -36,7 +36,6 @@ class ScoreList extends Component {
             if (!desc) return a.subject_title < b.subject_title ? -1 : 1;
             else return b.subject_title > a.subject_title ? 1 : -1
         });
-        console.log(subjectFilter);
         this.setState({scores: subjectFilter, desc: !this.state.desc})
     };
 

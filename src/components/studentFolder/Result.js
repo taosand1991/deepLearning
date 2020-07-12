@@ -15,8 +15,6 @@ class Result extends Component {
     componentDidMount() {
         this._isMounted  = true;
         window.addEventListener('beforeunload', this.goBack);
-        const {location} = this.props.history;
-        console.log(location);
 
     }
 
@@ -67,7 +65,6 @@ class Result extends Component {
 
     render() {
         const {location} = this.props.history;
-        console.log(location);
         const {subject:{subject, title_text}} = location;
         const {loading, errors} = this.state;
 
@@ -80,7 +77,6 @@ class Result extends Component {
                 const correctScore = location.correctScore;
                 const totalQuestion = location.questionIndex;
                 totalScore = Math.ceil((correctScore / totalQuestion) * 100);
-                console.log(totalScore);
                 return <div>
                      <h5>{totalScore}%</h5>
                      <div className="text-center">

@@ -29,7 +29,6 @@ class MainComponent extends Component {
         if (token) {
             const user = jwtDecode(token);
             this.setState({user});
-            console.log(this.state.user);
             setInterval(() => {
                 const today = Math.ceil(new Date().getTime() / 1000);
                 if (today > user.exp) {
@@ -55,7 +54,6 @@ class MainComponent extends Component {
     render() {
         const {user} = this.state;
         const {refreshPage} = this;
-        console.log(user);
 
         return (
             <Fragment>

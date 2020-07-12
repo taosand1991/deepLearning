@@ -55,7 +55,6 @@ class TeacherProfile extends Component {
         try{
             await axios.patch(profile, profileStuff);
             const {data:profileDetails} = await axios.patch(apiCall, accountDetails);
-            console.log(profileDetails);
             setTimeout(() => {
                 this.setState({profileDetails, profile:profileDetails.profile, loading:false,
                 openModal:false})

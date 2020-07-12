@@ -42,7 +42,6 @@ class ResetPassword extends Component {
     };
 
     render() {
-        console.log(this.props.match.params);
         const {account:{password1, password2}, loading} = this.state;
         return (
             <Fragment>

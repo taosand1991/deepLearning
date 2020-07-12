@@ -9,7 +9,7 @@ class Test extends Component {
            test:false,
            answer:{},
            currentQuestion:0,
-           subject:[],
+           subject:{},
            correctScore:0,
            questionIndex:1,
            loading:false,
@@ -59,22 +59,7 @@ class Test extends Component {
         this.setState({
             answer:answerId
         });
-        // try {
-        //
-        //     if (e.target.value === questions[currentQuestion].answer_text) {
-        //         console.log('correct');
-        //         this.setState({correctScore:this.state.correctScore + 1})
-        //     } else {
-        //         console.log('wrong');
-        //         this.setState({incorrectScore:this.state.incorrectScore + 1,
-        //         correctScore:this.state.correctScore - 1
-        //         })
-        //     }
-        // } catch (e) {
-        //     if (e) {
-        //         console.log(e.response.data)
-        //     }
-        // }
+
     };
 
     getPage =(number)=>{
